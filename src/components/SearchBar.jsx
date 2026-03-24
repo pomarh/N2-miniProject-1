@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function SearchBar() {
+function SearchBar({ setSearchTerm }) {
     const [menu, setMenu] = useState(false);
     const [search, setSearch] = useState(false);
+    const [inputText, setInputText] = useState("");
 
     const closeMenu = () => {
         setMenu(false);
@@ -16,6 +17,12 @@ function SearchBar() {
     function buttomSearch() {
         setSearch(!search);
     }
+
+    const textInputCategory = (e) => {
+        const value = e.target.value;
+        setInputText(value);
+        setSearchTerm(value);
+    };
     return (
         <>
             <nav className="w-12/12 h-15 flex justify-between items-center bg-bgfirst px-5 relative">
@@ -47,8 +54,11 @@ function SearchBar() {
                 <div className="flex">
                     <img className="w-5 h-5" src="/search-icon.png" alt="search" onClick={buttomSearch} />
                     <input
+                        placeholder="Search"
                         className={`${search ? "block" : "hidden"} absolute left-0 top-full w-full bg-amber-100 h-10 px-5 m-auto lg:block lg:static lg:w-48 lg:h-auto   lg:ml-2 lg:px-2`}
                         type="text"
+                        onChange={textInputCategory}
+                        value={inputText}
                     />
                 </div>
                 <div>

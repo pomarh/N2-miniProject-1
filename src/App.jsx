@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import Home from "./pages/Home";
@@ -6,11 +7,12 @@ import ProductPage from "./pages/ProductPage";
 import Footer from "./components/Footer";
 
 function App() {
+    const [searchTerm, setSearchTerm] = useState("");
     return (
         <div>
-            <SearchBar />
+            <SearchBar setSearchTerm={setSearchTerm} />
             <Routes>
-                <Route path="/" element={<Home />}></Route>
+                <Route path="/" element={<Home searchTerm={searchTerm} />}></Route>
                 <Route path="/ProductCategory/:nameCategory" element={<ProductCategory />}></Route>
                 <Route path="/ProductPage/:idProduct" element={<ProductPage />}></Route>
             </Routes>

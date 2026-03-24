@@ -2,21 +2,28 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function ProductCard() {
+function ProductCard({ searchTerm }) {
     const [productList, setProductList] = useState([]);
     const [allProduct, setAllProduct] = useState(false);
+    const [filterProduct, setFilterProduct] = useState([]);
 
     useEffect(() => {
         async function callProduct() {
             try {
                 const { data } = await axios.get("https://fakestoreapi.com/products");
                 setProductList(data);
+                setFilterProduct(data);
             } catch (error) {
                 console.log("Algo salio mal:", error);
             }
         }
         callProduct();
     }, []);
+
+    useEffect(() => {
+        const result = productList.filter((item) => item.category.toLowerCase().includes(searchTerm.toLowerCase()));
+        setFilterProduct(result);
+    }, [searchTerm, allProduct]);
 
     const buttonMore = () => {
         setAllProduct(!allProduct);
@@ -34,7 +41,7 @@ function ProductCard() {
                     </button>
                 </div>
                 <div className="grid grid-cols-2 gap-2 md:mx-25 md:gap-20 lg:mx-0 lg:grid lg:grid-cols-4">
-                    {productList.slice(0, allProduct ? productList.lenght : 4).map((product) => (
+                    {filterProduct.slice(0, allProduct ? productList.length : 4).map((product) => (
                         <Link key={product.id} to={`/ProductPage/${product.id}`} className=" ">
                             <div className="flex flex-col gap-2 h-full">
                                 <div className="w-full h-full rounded-lg">

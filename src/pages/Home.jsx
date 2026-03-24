@@ -1,13 +1,12 @@
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import ShopCategory from "../components/ShopCategory";
 
-function Home() {
+function Home({ searchTerm }) {
     return (
         <>
             <Header />
-            <ProductCard />
+            <ProductCard searchTerm={searchTerm} />
             <ShopCategory />
         </>
     );
