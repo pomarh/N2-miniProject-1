@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 function Header() {
     return (
         <header>
-            <div className="bg-[url('img-hero.png')] bg-cover md:bg-[url('img-hero-lg.png')] md:bg-cover md:bg-center">
+            <div className="bg-[url('/img-hero.png')] bg-cover md:bg-[url('/img-hero-lg.png')] md:bg-cover md:bg-center">
                 <div className="w-12/12 h-140 bg-black/60 flex flex-col justify-center items-center text-cente md:h-95 md:bg-black/60 lg:w-80 lg:h-90 lg:mx-10 ">
                     <p className="text-bluetext text-ms font-semibold uppercase font-family-montserrat">new colleccion 2024</p>
                     <div>
