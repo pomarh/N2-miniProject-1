@@ -16,7 +16,6 @@ function SearchBar() {
     function buttomSearch() {
         setSearch(!search);
     }
-
     return (
         <>
             <nav className="w-12/12 h-15 flex justify-between items-center bg-bgfirst px-5 relative">
