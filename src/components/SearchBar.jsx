@@ -13,6 +13,11 @@ function SearchBar() {
         setSearch(!search);
     }
 
+    function closeMenu() {
+        setMenu(false);
+        setSearch(false);
+    }
+
     return (
         <>
             <nav className="w-12/12 h-15 flex justify-between items-center bg-bgfirst px-5 relative">
@@ -22,16 +27,16 @@ function SearchBar() {
                     </div>
                     <div
                         className={`${menu ? "block" : "hidden"} absolute left-0 top-full w-full flex flex-col gap-5 bg-gray-100  p-5 text-center lg:flex lg:flex-row lg:gap-4 lg:gap-2 lg:bg-transparent lg:static`}>
-                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
-                            Electronics
+                        <Link to="/ProductCategory/electronics" onClick={closeMenu} className="h-8 text-xl hover:text-bluetext">
+                            electronics
                         </Link>
-                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
-                            jowerly
+                        <Link to="/ProductCategory/jewelery" onClick={closeMenu} className="h-8 text-xl hover:text-bluetext">
+                            jewelery
                         </Link>
-                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
-                            Men's
+                        <Link to="/ProductCategory/men's clothing" onClick={closeMenu} className="h-8 text-xl hover:text-bluetext">
+                            men's
                         </Link>
-                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
+                        <Link to="/ProductCategory/women's clothing" onClick={closeMenu} className="h-8 text-xl hover:text-bluetext">
                             women's
                         </Link>
                     </div>

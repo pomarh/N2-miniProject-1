@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 function ShopCategory() {
     const [categoryShop, setCategoryShop] = useState([]);

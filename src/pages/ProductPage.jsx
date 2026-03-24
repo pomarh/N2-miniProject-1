@@ -46,7 +46,6 @@ function ProductPage() {
                 <button className="flex justify-center items-center gap-2 bg-black text-white py-2 px-4 text-[12px] rounded-lg lg:w-60 lg:m-auto">
                     <img className="w-5 h-5 bg-amber-300" src="/cart-black-icon.png" alt="" /> add to cart
                 </button>
-                {console.log(productCart)}
             </div>
         </>
     );
