@@ -5,17 +5,16 @@ function SearchBar() {
     const [menu, setMenu] = useState(false);
     const [search, setSearch] = useState(false);
 
+    const closeMenu = () => {
+        setMenu(false);
+        setSearch(false);
+    };
     function buttomMenu() {
         setMenu(!menu);
     }
 
     function buttomSearch() {
         setSearch(!search);
-    }
-
-    function closeMenu() {
-        setMenu(false);
-        setSearch(false);
     }
 
     return (
