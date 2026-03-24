@@ -22,16 +22,16 @@ function SearchBar() {
                     </div>
                     <div
                         className={`${menu ? "block" : "hidden"} absolute left-0 top-full w-full flex flex-col gap-5 bg-gray-100  p-5 text-center lg:flex lg:flex-row lg:gap-4 lg:gap-2 lg:bg-transparent lg:static`}>
-                        <Link to="/category" className="h-8 text-xl hover:text-bluetext">
+                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
                             Electronics
                         </Link>
-                        <Link to="/category" className="h-8 text-xl hover:text-bluetext">
+                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
                             jowerly
                         </Link>
-                        <Link to="/category" className="h-8 text-xl hover:text-bluetext">
+                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
                             Men's
                         </Link>
-                        <Link to="/category" className="h-8 text-xl hover:text-bluetext">
+                        <Link to="/ProductCategory" className="h-8 text-xl hover:text-bluetext">
                             women's
                         </Link>
                     </div>
