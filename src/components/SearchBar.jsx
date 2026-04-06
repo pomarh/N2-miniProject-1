@@ -55,7 +55,7 @@ function SearchBar({ setSearchTerm }) {
                     <img className="w-5 h-5" src="/search-icon.png" alt="search" onClick={buttomSearch} />
                     <input
                         placeholder="Search"
-                        className={`${search ? "block" : "hidden"} absolute left-0 top-full w-full bg-amber-100 h-10 px-5 m-auto lg:block lg:static lg:w-48 lg:h-auto   lg:ml-2 lg:px-2`}
+                        className={`${search ? "block" : "hidden"} absolute left-0 top-full w-full bg-gray-200 rounded-lg h-12 px-5 m-auto lg:block lg:static lg:w-48 lg:h-auto   lg:ml-2 lg:px-2`}
                         type="text"
                         onChange={textInputCategory}
                         value={inputText}

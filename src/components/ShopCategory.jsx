@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Footer from "./Footer";
+import NotFound from "../pages/NotFound";
 
 function ShopCategory() {
     const [categoryShop, setCategoryShop] = useState([]);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const categoryIcon = {
         electronics: "/microchip-icon.svg",
@@ -17,12 +18,18 @@ function ShopCategory() {
             try {
                 const { data } = await axios.get(`https://fakestoreapi.com/products/categories`);
                 setCategoryShop(data);
+                setErrorMessage(null);
             } catch (error) {
                 console.log("Algo salio mal:", error);
+                setErrorMessage(`${error.message}`);
             }
         }
         callCategory();
     }, []);
+
+    if (errorMessage) {
+        return <NotFound errorM={errorMessage} />;
+    }
 
     return (
         <section className="p-5 bg-[#EAEDF8]">

@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NotFound from "../pages/NotFound";
 
 function ProductCard({ searchTerm }) {
     const [productList, setProductList] = useState([]);
     const [allProduct, setAllProduct] = useState(false);
     const [filterProduct, setFilterProduct] = useState([]);
     const [loadingcard, setLoadingCard] = useState(true);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
         async function callProduct() {
@@ -16,6 +18,7 @@ function ProductCard({ searchTerm }) {
                 setFilterProduct(data);
             } catch (error) {
                 console.log("Algo salio mal:", error);
+                setErrorMessage(`${error.message}`);
             } finally {
                 setLoadingCard(false);
             }
@@ -33,6 +36,10 @@ function ProductCard({ searchTerm }) {
     };
 
     buttonMore;
+
+    if (errorMessage) {
+        return <NotFound errorM={errorMessage} />;
+    }
 
     return (
         <>
