@@ -34,7 +34,10 @@ function ProductCategory() {
                                     <p className="text-bluetext">${product.price}</p>
                                 </div>
                                 <button className="flex justify-center items-center gap-2 bg-black text-white py-2 px-4 text-[12px] rounded-lg">
-                                    <img className="w-5 h-5 bg-amber-300" src="/cart-black-icon.png" alt="" /> add to cart
+                                    <span className="w-7 h-7 bg-gray-200 rounded-full flex justify-center items-center">
+                                        <img className="w-5 h-5" src="/cart-black-icon.png" alt="" />
+                                    </span>
+                                    add to cart
                                 </button>
                             </div>
                         </Link>
